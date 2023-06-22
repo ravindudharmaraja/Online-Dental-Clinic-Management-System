@@ -1,0 +1,165 @@
+hea vernetzte praxissteuerung ==> Reference
+
+XX. Add every process to logs table
+XX. Add working times with user's profile logs
+
+
+XX. FIRST OF ALL ORGANIZE YOUR JS FILES
+******************USERS******************
+
+XX. Create User (Only Admins with role 1, can create or delete Users) Profile photo
+XX. Edit User (Any User can only change his pass, Admin can change all his and other's data)
+XX. Create Table user_logs(id, affected_table,affected_row(table_id), type_of_process(update, delete, create), column_names, user_id, datetime)
+XX. User Profile (Shows all his information with all the logs(which are all what he has done on the system, every table with its logs whether update,add or delete))
+XX. Show All Users (Only Admin is allowed to show all users) with edit and delete and change role to admin or to user buttons
+XX. search user name,phone,or uname
+XX. upload profile pic
+XX. Add to main_menu under admin controls:
+    XX-all users
+    XX-all logs of every shit on the system
+    XX-all logs of every table medication, diagnosis, visits, patients, xrays, users
+****************Diagnosis****************
+
+XX. Create a new teeth table (id, diagnose_id, teeth_name, price, diagnose_type, description, discount, discount_type(0=% , 1=amount of money), deleted)
+XX. relationship between teeth and diagnose 1 to m
+XX. modify the teeth creation and give a different color for every diagnosis type
+XX. put buttons on the dianosis image to choose which type of diagnosis
+XX. save the diagnosis then all the teeth in one transaction
+XX. Add color column to the teeth table
+XX. Show Diagnosis Modifying to the new changes
+XX. modify all diagnose controller and view to adapt to the new updates in database
+XX. show all the next visits and the last ones of a diagnosis and the current one
+                        TYPES OF DIAGNOSIS:
+                        01. Cairous
+                        02. Gingivitis
+                        03. Ento Treatment
+                        04. Endo Treatment
+                        05. Endo Retreatment
+                        06. Missed Tooth due to extraction
+                        07. Missed tooth due to genitics
+                        08. Fixed Crown
+                        09. Fixed Bridge
+                        10. Impacted teeth
+                        11. Extraction
+                        12. Variation
+XX. Edit Diagnosis
+XX. Add Tooth
+*****************Patient*****************
+
+XX. Show File Number barcode and give it the ability to print it(profile)
+XX. Change profile pic
+XX. Create log dynamically
+XX. Payments Report within all dianosis
+XX. Show all visits order by date desc
+XX. if user forgets to end a visit, next time when the patient has a visit , the new visit will be on waiting room and the last one should go to be ended
+XX. Show all Payments of all patients
+*******************Drug******************
+
+change drug to medication
+XX. Create a new table called drugs that have only id and drugName.
+XX. Make a relationship between the new drugs table with the diagnoses table through the bridge table which is the old drugs table
+XX. add the ability to add drugs alone or within a diagnosis (Just alone is done)
+XX. add the ability to show all drugs and delete edit
+XX. search a drug
+XX. add drugs to a specific Diagnosis
+XX. Show all drugs within a Diagnosis
+XX. Solve the bug within prescription and delete by js
+XX. Solve the edit drug by prescription
+
+**************OralRadiology**************
+
+XX. edit or delete functionality (finished by controller)
+XX. edit form for description.
+XX. show all oralRadiology of a Diagnosis
+XX. preview pic within logs
+
+******************Visits*****************
+
+XX. Insert Visits: using ajax on datechange get all the free working times and display it on a select
+XX. in ajax response : check if there is errors like the day chosen is not a working day,or no free reservation
+XX. Edit Visits: same as insert.
+XX. Delete Visit
+XX. show all visits of a Diagnosis
+XX. Approve visits
+XX. (2= Not Approved and it means the patient didn't come yet) (3= Approved and it means the patient is waiting in the waiting room) (1= Finished and it means the patient already finished his visit)
+XX. show all todays visits
+XX. show all visits of tomorrow
+XX. show all visits of yesterday
+XX. show visits of a specific day ----- search by datetime XX
+XX. show all visits of patients by patients profile
+XX. last visit by patients profile
+XX. next visit by patients profile
+XX. What will happen if patient didn't come?? Should doctor cancel his visit or delete;
+
+
+***************WorkingTimes**************
+
+XX. Create Table Working Times (id, day, time_from, time_to, deleted)
+XX. Add working time ,
+XX. edit , delete
+XX. retrieve the working times
+
+****************cases_photo**************
+
+XX. create table cases_photos (id, photo, diagnosis_id, before_after(0=before, 1=after), deleted)
+XX. add it from the diagnosis, delete
+XX. show it from a folder within the diagnosis and the patient of all diagnoses before and after
+
+************General_Functions************
+
+The General_Functions that the user can do it everywhere of the app
+XX. make reports of all payments
+XX. Only Admin can look at the recycle bin and see all the details and (NOT YET who deleted them and when)
+XX. Recover deleted data
+XX. Delete it permanently & recover with deleted related shit
+XX. Drag and drop from not approved to waiting room to end
+XX. delete image files
+NEXT
+02. Barcode scanning
+03. Send msg to patients with the visit's time details of tomorrow
+****************HomePublic***************
+
+01. Home public Page for patients
+02. A Message request form at the end of it
+03. Admin Panel to add photos and text to the clinic home public page with a link in the navbar.
+04. save these text and photos in database table called pageElements (text, img, type(img,p,h4,img_text as cards), order(1,2,3,...))
+05. Allow patients to request for an appointment or send a message within the public page
+06. get Notified if the patient send a message if it's unread
+07. Display all messages order by created date desc
+08. Ability to mark all messages as read.
+
+
+
+https://benfrain.com/create-print-styles-using-css3-media-queries/
+
+barcode :
+
+new :
+https://stackoverflow.com/questions/11290898/detect-when-input-box-filled-by-keyboard-and-when-by-barcode-scanner/15354814
+https://a.kabachnik.info/jquery-working-with-barcode-scanners.html#prettyPhoto
+old :
+https://stackoverflow.com/questions/8465839/integrating-barcode-scanner-into-php-application
+
+http://barcode-coder.com/en/barcode-jquery-plugin-201.html
+
+https://stackoverflow.com/questions/21633537/javascript-how-to-read-a-hand-held-barcode-scanner-best#
+
+https://stackoverflow.com/questions/7894228/generating-and-reading-barcode
+
+http://lindell.me/JsBarcode/
+
+
+
+Laravel Nice Example
+
+https://vegibit.com/how-to-create-user-registration-in-laravel/
+
+Animation
+
+https://www.creativebloq.com/inspiration/css-animation-examples
+
+
+BUGS :
+XX. creating patient
+XX. searching patient
+XX. creating diagnosis
